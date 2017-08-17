@@ -2,13 +2,13 @@ package br.com.fneto.javafx.treinamento;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.prefs.Preferences;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+
+import org.controlsfx.dialog.Dialogs;
 
 import br.com.fneto.javafx.treinamento.model.Person;
 import br.com.fneto.javafx.treinamento.model.PersonListWrapper;
@@ -21,15 +21,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -60,7 +54,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("AgendaApp");
+		this.primaryStage.setTitle("AddressApp");
 
 		// Set the application icon.
 		this.primaryStage.getIcons().add(new Image("file:resources/images/address_book_32.png"));
@@ -191,12 +185,12 @@ public class MainApp extends Application {
 	        prefs.put("filePath", file.getPath());
 
 	        // Update the stage title.
-	        primaryStage.setTitle("AgendaApp - " + file.getName());
+	        primaryStage.setTitle("AddressApp - " + file.getName());
 	    } else {
 	        prefs.remove("filePath");
 
 	        // Update the stage title.
-	        primaryStage.setTitle("AgendaApp");
+	        primaryStage.setTitle("AddressApp");
 	    }
 	}
 	
@@ -221,40 +215,11 @@ public class MainApp extends Application {
 	        // Save the file path to the registry.
 	        setPersonFilePath(file);
 
-	    } catch (Exception ex) { // catches ANY exception
-
-	    	Alert alert = new Alert(AlertType.ERROR);
-	    	alert.setTitle("Erro");
-	    	alert.setHeaderText("Sobre");
-	    	alert.setContentText("Não foi possível carregar dados do arquivo:\n" + file.getPath());
-	    	
-	    	// Create expandable Exception.
-	    	StringWriter sw = new StringWriter();
-	    	PrintWriter pw = new PrintWriter(sw);
-	    	ex.printStackTrace(pw);
-	    	String exceptionText = sw.toString();
-
-	    	Label label = new Label("O Stacktrace da excessão foi:");
-
-	    	TextArea textArea = new TextArea(exceptionText);
-	    	textArea.setEditable(false);
-	    	textArea.setWrapText(true);
-
-	    	textArea.setMaxWidth(Double.MAX_VALUE);
-	    	textArea.setMaxHeight(Double.MAX_VALUE);
-	    	GridPane.setVgrow(textArea, Priority.ALWAYS);
-	    	GridPane.setHgrow(textArea, Priority.ALWAYS);
-
-	    	GridPane expContent = new GridPane();
-	    	expContent.setMaxWidth(Double.MAX_VALUE);
-	    	expContent.add(label, 0, 0);
-	    	expContent.add(textArea, 0, 1);
-
-	    	// Set expandable Exception into the dialog pane.
-	    	alert.getDialogPane().setExpandableContent(expContent);
-	    	
-	    	alert.showAndWait();
-
+	    } catch (Exception e) { // catches ANY exception
+	        Dialogs.create()
+	                .title("Erro")
+	                .masthead("Não foi possível carregar dados do arquivo:\n" 
+	                          + file.getPath()).showException(e);
 	    }
 	}
 
@@ -279,38 +244,10 @@ public class MainApp extends Application {
 
 	        // Saalva o caminho do arquivo no registro.
 	        setPersonFilePath(file);
-	    } catch (Exception ex) { // catches ANY exception
-	    	Alert alert = new Alert(AlertType.ERROR);
-	    	alert.setTitle("Erro");
-	    	alert.setHeaderText("Sobre");
-	    	alert.setContentText("Não foi possível salvar os dados do arquivo:" + file.getPath());
-	    	
-	    	// Create expandable Exception.
-	    	StringWriter sw = new StringWriter();
-	    	PrintWriter pw = new PrintWriter(sw);
-	    	ex.printStackTrace(pw);
-	    	String exceptionText = sw.toString();
-
-	    	Label label = new Label("O Stacktrace da excessão foi:");
-
-	    	TextArea textArea = new TextArea(exceptionText);
-	    	textArea.setEditable(false);
-	    	textArea.setWrapText(true);
-
-	    	textArea.setMaxWidth(Double.MAX_VALUE);
-	    	textArea.setMaxHeight(Double.MAX_VALUE);
-	    	GridPane.setVgrow(textArea, Priority.ALWAYS);
-	    	GridPane.setHgrow(textArea, Priority.ALWAYS);
-
-	    	GridPane expContent = new GridPane();
-	    	expContent.setMaxWidth(Double.MAX_VALUE);
-	    	expContent.add(label, 0, 0);
-	    	expContent.add(textArea, 0, 1);
-
-	    	// Set expandable Exception into the dialog pane.
-	    	alert.getDialogPane().setExpandableContent(expContent);
-	    	
-	    	alert.showAndWait();
+	    } catch (Exception e) { // catches ANY exception
+	        Dialogs.create().title("Erro")
+	                .masthead("Não foi possível salvar os dados do arquivo:\n" 
+	                          + file.getPath()).showException(e);
 	    }
 	}
 	
