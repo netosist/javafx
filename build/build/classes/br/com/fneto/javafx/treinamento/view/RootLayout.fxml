@@ -10,40 +10,40 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Arquivo">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleNew" text="New">
+              <MenuItem mnemonicParsing="false" onAction="#handleNew" text="Novo">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open...">
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Abrir...">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save">
+                  <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Salvar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Save As...">
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Salvar Como...">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Sair" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Statistics">
+          <Menu mnemonicParsing="false" text="Estatísticas">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleShowBirthdayStatistics" text="Show Statistics" />
+              <MenuItem mnemonicParsing="false" onAction="#handleShowBirthdayStatistics" text="Mostrar Estatísticas" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
+            <Menu mnemonicParsing="false" text="Ajuda">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Sobre" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

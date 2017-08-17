@@ -3,7 +3,7 @@
 <script>
     function launchApplication(jnlpfile) {
         dtjava.launch(            {
-                url : 'javafx.jnlp'
+                url : 'Agenda.jnlp'
             },
             {
                 javafx : '8.0+'
@@ -19,7 +19,7 @@
         dtjava.embed(
             {
                 id : 'fxApplication',
-                url : 'javafx.jnlp',
+                url : 'Agenda.jnlp',
                 placeholder : 'javafx-app-placeholder',
                 width : '0',
                 height : '0'
@@ -35,8 +35,8 @@
 </script>
 
 </head><body>
-<h2>Test page for <b>AddressApp</b></h2>
-  <b>Webstart:</b> <a href='javafx.jnlp' onclick="return launchApplication('javafx.jnlp');">click to launch this app as webstart</a><br><hr><br>
+<h2>Test page for <b>Agenda</b></h2>
+  <b>Webstart:</b> <a href='Agenda.jnlp' onclick="return launchApplication('Agenda.jnlp');">click to launch this app as webstart</a><br><hr><br>
 
   <!-- Applet will be inserted here -->
   <div id='javafx-app-placeholder'></div>

@@ -21,13 +21,13 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="First Name" />
+            <Label text="Nome" />
             <TextField fx:id="firstNameField" GridPane.columnIndex="1" />
-            <Label text="Last Name" GridPane.rowIndex="1" />
-            <Label text="Street" GridPane.rowIndex="2" />
-            <Label text="City" GridPane.rowIndex="3" />
-            <Label text="Postal Code" GridPane.rowIndex="4" />
-            <Label text="Birthday" GridPane.rowIndex="5" />
+            <Label text="Sobrenome" GridPane.rowIndex="1" />
+            <Label text="Rua" GridPane.rowIndex="2" />
+            <Label text="Cidade" GridPane.rowIndex="3" />
+            <Label text="CEP" GridPane.rowIndex="4" />
+            <Label text="Aniversário" GridPane.rowIndex="5" />
             <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="streetField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -35,7 +35,7 @@
             <TextField fx:id="birthdayField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <Button cancelButton="true" layoutX="247.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="33.0" prefWidth="93.0" text="Cancel" />
-      <Button defaultButton="true" layoutX="162.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="33.0" prefWidth="79.0" text="OK" />
+      <Button cancelButton="true" layoutX="236.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="33.0" prefWidth="104.0" text="Cancelar" />
+      <Button defaultButton="true" layoutX="152.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="33.0" prefWidth="79.0" text="OK" />
    </children>
 </AnchorPane>

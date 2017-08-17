@@ -2,10 +2,10 @@ package br.com.fneto.javafx.treinamento.view;
 
 import java.io.File;
 
-import org.controlsfx.dialog.Dialogs;
-
 import br.com.fneto.javafx.treinamento.MainApp;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 
 public class RootLayoutController {
@@ -94,11 +94,13 @@ public class RootLayoutController {
      */
     @FXML
     private void handleAbout() {
-        Dialogs.create()
-            .title("AddressApp")
-            .masthead("Sobre")
-            .message("Autor: Marco Jakob\nWebsite: http://code.makery.ch")
-            .showInformation();
+    	
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setTitle("AgendaApp");
+    	alert.setHeaderText("Sobre");
+    	alert.setContentText("Aplicação desenvolvida por Francisco Neto baseada no tutorial do Marco Jakob - Website: http://code.makery.ch");
+    	
+    	alert.showAndWait();
     }
 
     /**
