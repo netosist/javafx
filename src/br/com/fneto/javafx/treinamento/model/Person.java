@@ -1,4 +1,4 @@
-package org.comshalom.extratofidelidade.model;
+package br.com.fneto.javafx.treinamento.model;
 
 import java.time.LocalDate;
 
